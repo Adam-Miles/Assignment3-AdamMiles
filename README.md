@@ -6,7 +6,7 @@ Instructions for setting up and running the project
 4. In the query tool, open the provide StudentTable.sql file and then click, "execute quert"
 5. In an IDE create a project and ensure that this project uses maven
 6. Create a source file called DatabaseAcessor.java
-7. Navigate to the DatabaseAcessor.java file provided in the repository (
+7. Navigate to the DatabaseAcessor.java file provided in the repository (in the src/main/java folder)
 8. Replace the contents of the POM.xml file from the newly created project with that from the reprository
 9. Run the program (note that the username and passwords are those for your server and the database name
     would be whatever you named the database created on steps 2-4)
