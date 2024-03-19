@@ -11,6 +11,7 @@ import java.util.Scanner;
 
 public class DatabaseAccessor{
     private Connection connection;
+
     public DatabaseAccessor(String url, String user, String password) throws Exception{
         try {
             Class.forName("org.postgresql.Driver");
@@ -22,6 +23,7 @@ public class DatabaseAccessor{
         }
     }
 
+    // prints out the name of all the students in the database
     public void getAllStudents() throws Exception{
         try{
             Statement statement = connection.createStatement();
@@ -42,6 +44,7 @@ public class DatabaseAccessor{
         }
     }
 
+    // creates a row for a new student with the parameters for its keys
     public void addStudent(String first_name, String last_name, String email, String enrollment_date) throws Exception{
         String insertCode = "INSERT INTO students (first_name, last_name, email, enrollment_date)  VALUES (?,?,?,?)";
         try{
@@ -61,6 +64,7 @@ public class DatabaseAccessor{
         }
     }
 
+    // updates the email for the student with the student_id parameter with new_email being what the email is set to
     public void updateStudentEmail(int student_id, String new_email) throws Exception{
         String insertCode = "UPDATE students SET email = ? WHERE student_id =?";
         try{
@@ -78,6 +82,7 @@ public class DatabaseAccessor{
         }
     }
 
+    // removes the tuple with the student having the value of student_id for its id key
     public void deleteStudent(int student_id) throws  Exception{
         String insertCode = "DELETE  FROM students WHERE student_id =?";
         try{
